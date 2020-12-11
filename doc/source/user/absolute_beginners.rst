@@ -97,34 +97,34 @@ you see when you run ``python`` on the command line, but if you're using IPython
 What’s the difference between a Python list and a NumPy array?
 --------------------------------------------------------------
 
-NumPy gives you an enormous range of fast and efficient ways of creating arrays
-and manipulating numerical data inside them. While a Python list can contain
-different data types within a single list, all of the elements in a NumPy array
-should be homogeneous. The mathematical operations that are meant to be performed
-on arrays would be extremely inefficient if the arrays weren't homogeneous.
+NumPy gives you an <span class='definition'>enormous range of fast and efficient ways of creating arrays
+and manipulating numerical data inside them</span>. While a Python list can contain
+different data types within a single list, <span class='important'>all of the elements in a NumPy array
+should be homogeneous</span>. The mathematical operations that are meant to be performed
+on arrays would be <span class='important'>extremely inefficient if the arrays weren't homogeneous</span>.
 
 **Why use NumPy?**
 
 NumPy arrays are faster and more compact than Python lists. An array consumes
-less memory and is convenient to use. NumPy uses much less memory to store data
-and it provides a mechanism of specifying the data types. This allows the code
-to be optimized even further.
+<span class='important'>less memory</span> and is convenient to use. NumPy uses much less memory to store data
+and it provides a mechanism of <span class='important'>specifying the data types</span>. This allows the code
+to be <span class='important'>optimized</span> even further.
 
 What is an array?
 -----------------
 
-An array is a central data structure of the NumPy library. An array is a grid of
+An <span class='definition'>array</span> is a central data structure of the NumPy library. <span class='important'>An array is a grid of
 values and it contains information about the raw data, how to locate an element,
-and how to interpret an element. It has a grid of elements that can be indexed
+and how to interpret an element</span>. It has a grid of elements that can be indexed
 in :ref:`various ways <quickstart.indexing-slicing-and-iterating>`.
-The elements are all of the same type, referred to as the array ``dtype``.
+The elements are all of the same type, referred to as the <span class='definition'>array ``dtype``</span>.
 
-An array can be indexed by a tuple of nonnegative integers, by booleans, by
-another array, or by integers. The ``rank`` of the array is the number of
-dimensions. The ``shape`` of the array is a tuple of integers giving the size of
+An array can be <span class='definition'>indexed</span> by a tuple of nonnegative integers, by booleans, by
+another array, or by integers. The <span class='definition'>``rank``</span> of the array is the number of
+dimensions. The <span class='definition'>``shape``</span> of the array is a tuple of integers giving the size of
 the array along each dimension.
 
-One way we can initialize NumPy arrays is from Python lists, using nested lists
+One way we can <span class='definition'>initialize NumPy arrays</span> is from Python lists, using nested lists
 for two- or higher-dimensional data.
 
 For example::
@@ -153,19 +153,19 @@ More information about arrays
 
 ------
 
-You might occasionally hear an array referred to as a "ndarray," which is
-shorthand for "N-dimensional array." An N-dimensional array is simply an array
+You might occasionally hear an array referred to as a <span class='definition'>"ndarray,"</span> which is
+shorthand for "N-dimensional array." <span class='definition'>An N-dimensional array</span> is simply an array
 with any number of dimensions. You might also hear **1-D**, or one-dimensional
 array, **2-D**, or two-dimensional array, and so on. The NumPy ``ndarray`` class
-is used to represent both matrices and vectors. A **vector** is an array with a
+is used to represent both matrices and vectors. A <span class='definition'>**vector**</span> is an array with a
 single dimension (there's no difference
-between row and column vectors), while a **matrix** refers to an
+between row and column vectors), while a <span class='definition'>**matrix**</span> refers to an
 array with two dimensions. For **3-D** or higher dimensional arrays, the term
 **tensor** is also commonly used.
 
 **What are the attributes of an array?**
 
-An array is usually a fixed-size container of items of the same type and size.
+<span class='important'>An array is usually a fixed-size container of items of the same type and size</span>.
 The number of dimensions and items in an array is defined by its shape. The
 shape of an array is a tuple of non-negative integers that specify the sizes of
 each dimension.
@@ -181,10 +181,10 @@ a length of 3.
 
 Just like in other Python container objects, the contents of an array can be
 accessed and modified by indexing or slicing the array. Unlike the typical container
-objects, different arrays can share the same data, so changes made on one array might
+objects, <span class='important'>different arrays can share the same data</span>, so changes made on one array might
 be visible in another.
 
-Array **attributes** reflect information intrinsic to the array itself. If you
+<span class='definition'>Array **attributes**</span> reflect information intrinsic to the array itself. If you
 need to get, or even set, properties of an array without creating a new array,
 you can often access an array through its attributes.
 
@@ -201,9 +201,9 @@ How to create a basic array
 
 -----
 
-To create a NumPy array, you can use the function ``np.array()``.
+<span class='definition'>To create</span> a NumPy array, you can use the function ``np.array()``.
 
-All you need to do to create a simple array is pass a list to it. If you choose
+All you need to do to <span class='important'>create a simple array is pass a list to it</span>. If you choose
 to, you can also specify the type of data in your list.
 :ref:`You can find more information about data types here <arrays.dtypes>`. ::
 
@@ -217,38 +217,38 @@ You can visualize your array this way:
 *Be aware that these visualizations are meant to simplify ideas and give you a basic understanding of NumPy concepts and mechanics. Arrays and array operations are much more complicated than are captured here!*
 
 Besides creating an array from a sequence of elements, you can easily create an
-array filled with ``0``'s::
+<span class='important'>array filled with ``0``'s</span>::
 
   >>> np.zeros(2)
   array([0., 0.])
 
-Or an array filled with ``1``'s::
+Or <span class='important'>an array filled with ``1``'s</span>::
 
   >>> np.ones(2)
   array([1., 1.])
 
-Or even an empty array! The function ``empty`` creates an array whose initial
+Or even <span class='important'>an empty array</span>! The function ``empty`` creates an array whose initial
 content is random and depends on the state of the memory. The reason to use
-``empty`` over ``zeros`` (or something similar) is speed - just make sure to
+``empty`` over ``zeros`` (or something similar) is <span class='important'>speed</span> - just make sure to
 fill every element afterwards! ::
 
   >>> # Create an empty array with 2 elements
   >>> np.empty(2)
   array([ 3.14, 42.  ])  # may vary
 
-You can create an array with a range of elements::
+You can create an array <span class='important'>with a range of elements</span>::
 
   >>> np.arange(4)
   array([0, 1, 2, 3])
 
-And even an array that contains a range of evenly spaced intervals. To do this,
+And even an array that contains <span class='important'>a range of evenly spaced intervals</span>. To do this,
 you will specify the **first number**, **last number**, and the **step size**. ::
 
   >>> np.arange(2, 9, 2)
   array([2, 4, 6, 8])
 
-You can also use ``np.linspace()`` to create an array with values that are
-spaced linearly in a specified interval::
+You can also use ``np.linspace()`` to create <span class='important'>an array with values that are
+spaced linearly in a specified interval</span>::
 
   >>> np.linspace(0, 10, num=5)
   array([ 0. ,  2.5,  5. ,  7.5, 10. ])
